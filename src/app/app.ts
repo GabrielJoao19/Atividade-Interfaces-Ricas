@@ -25,6 +25,7 @@ export class App {
     { id: 3, nome: 'Aluno 3', materiasCursadas: 6, ativo: true }
   ]);
 
+  // Variáveis do formulário único
   novo_aluno = '';
   novo_materiasCursadas: number = 0;
   novo_ativo: boolean = false;
@@ -59,6 +60,7 @@ export class App {
         this.alunos.update(lista_atual => [...lista_atual, aluno]);
       }
 
+      // Limpa o formulário após a ação
       this.novo_aluno = '';
       this.novo_materiasCursadas = 0;
       this.novo_ativo = false;
@@ -69,10 +71,12 @@ export class App {
     this.alunos.update(lista_atual => lista_atual.filter(aluno => aluno.id !== id));
   }
 
+  // Preenche o formulário único com os dados do aluno selecionado
   editar_aluno(aluno: Aluno) {
     this.novo_aluno = aluno.nome;
     this.novo_materiasCursadas = aluno.materiasCursadas;
     this.novo_ativo = aluno.ativo;
+
     this.aluno_selecionado = aluno;
   }
 }
